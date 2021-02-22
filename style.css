@@ -9,7 +9,9 @@
 body {
   font-size: 62.5%;
   font-family: 'Kanit', sans-serif;
+  background-color: #0b525b;
   overflow: hidden;
+  position: relative;
 }
 
 #header {
@@ -41,7 +43,7 @@ h1 {
 
 #main {
   width: 100vw;
-  height: 80vh;
+  height: 70vh;
   background-color: #0b525b;
   display: flex;
   flex-direction: column;
@@ -152,6 +154,58 @@ button:focus {
   outline: none;
 }
 
+/* Modal */
+.modalBackground {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background: linear-gradient(#0dc7c4, #0cca91, transparent);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5;
+  margin-top: -100vh;
+}
+
+.activeModal {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal {
+  width: 30%;
+  height: 45%;
+  background-color: rgb(243, 237, 237);
+  border-radius: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #037a78;
+  line-height: 4;
+  position: relative;
+}
+
+.modalSubscription {
+  text-align: center;
+}
+
+.modalSubscription img {
+  width: 65%;
+  height: 65%;
+  border-radius: 20%;
+}
+
+.modalClose {
+  position: absolute;
+  top: -2rem;
+  right: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 /* Phone */
 @media only screen and (max-width: 500px) {
   body {
@@ -159,7 +213,7 @@ button:focus {
     overflow-x: hidden;
   }
   #main {
-    height: 100vh;
+    height: 70vh;
   }
   /* Header */
   #title {
@@ -182,6 +236,10 @@ button:focus {
     height: 3rem;
     font-size: 0.8rem;
   }
+  .modal {
+    width: 65%;
+    height: 45%;
+  }
 }
 
 /* Tablet */
@@ -191,7 +249,7 @@ button:focus {
     overflow-x: hidden;
   }
   #main {
-    height: 100vh;
+    height: 70vh;
   }
   /* Header */
   #title {
@@ -214,6 +272,10 @@ button:focus {
     height: 3rem;
     font-size: 0.8rem;
   }
+  .modal {
+    width: 65%;
+    height: 50%;
+  }
 }
 
 /* Normal */
@@ -223,7 +285,7 @@ button:focus {
     overflow-x: hidden;
   }
   #main {
-    height: 100vh;
+    height: 70vh;
   }
   /* Header */
   #title {
@@ -245,5 +307,9 @@ button:focus {
   .checkbox {
     height: 3rem;
     font-size: 1rem;
+  }
+  .modal {
+    width: 50%;
+    height: 50%;
   }
 }

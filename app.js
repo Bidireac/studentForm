@@ -1,6 +1,7 @@
 const form = document.getElementById('form');
 const messageContainer = document.querySelector('.message-container');
-const message = document.getElementById('message');
+const modal = document.querySelector('.modalBackground');
+const modalClose = document.querySelector('.modalClose');
 
 function validateForm() {
   isValid = form.checkValidity();
@@ -28,7 +29,7 @@ function storeFormData() {
   xhr.open('POST', 'sendData.php');
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.send(jsonData);
-  message.innerText = 'hi';
+  modal.classList.add('activeModal');
 }
 
 function processFormData(e) {
@@ -40,3 +41,6 @@ function processFormData(e) {
 }
 
 form.addEventListener('submit', processFormData);
+modalClose.addEventListener('click', () => {
+  modal.classList.remove('activeModal');
+});
