@@ -26,4 +26,4 @@ Project is:  _finished
 
 ## Live Demo
 
-https://naughty-poincare-55bb73.netlify.app
+https://awesome-ptolemy-587f81.netlify.app/
